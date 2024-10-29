@@ -1,5 +1,6 @@
 #! /bin/bash
 clear
+#
 
 declare -A colores
 array_imagen=()
@@ -16,7 +17,6 @@ else
 			colores[$color]=$hex
 		fi
 	done
-	echo "prueba"
 
 	echo "Colores introducidos:"
 	for color in ${!colores[@]}; do
