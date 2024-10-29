@@ -16,6 +16,7 @@ else
 			colores[$color]=$hex
 		fi
 	done
+	echo "prueba"
 
 	echo "Colores introducidos:"
 	for color in ${!colores[@]}; do
