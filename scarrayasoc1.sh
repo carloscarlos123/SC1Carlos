@@ -10,8 +10,8 @@ else
 	echo "Has introducido $# colores"
 
 	for color in $@; do
-		color_fich=$(cat colores.txt | grep $color | cut -d ":" -f1)
-		hex=$(cat colores.txt | grep $color | cut -d ":" -f2)
+		color_fich=$(cat /home/usuario/colores.txt | grep $color | cut -d ":" -f1)
+		hex=$(cat /home/usuario/colores.txt | grep $color | cut -d ":" -f2)
 		if [[ "$color_fich" == "$color" ]]; then
 			colores[$color]=$hex
 		fi
@@ -32,5 +32,6 @@ else
 	texto_ej=$(ifconfig)
 	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><img src='/home/usuario/imagen.png /><body>"
 
-	echo $crear_html > SC1Carlos/SC1Carlos/index.html
+	sudo echo $crear_html > index.html
+	sudo docker-compose up -d --force-recreate
 fi
