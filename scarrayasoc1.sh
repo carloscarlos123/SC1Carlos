@@ -32,6 +32,6 @@ else
 	texto_ej=$(ifconfig)
 	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><img src='/home/usuario/imagen.png /><body>"
 
-	sudo echo $crear_html > index.html
+	sudo echo $crear_html > /home/usuario/index.html
 	sudo docker-compose up -d --force-recreate
 fi
