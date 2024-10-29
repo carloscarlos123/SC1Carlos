@@ -1,8 +1,0 @@
-rojo:FF0000
-verde:008f39
-azul:0000FF
-amarillo:FFD300
-blanco:FFFFFF
-negro:000000
-morado:572364
-naranja:FFA500
