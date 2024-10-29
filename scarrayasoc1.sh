@@ -1,6 +1,5 @@
 #! /bin/bash
 clear
-#
 
 declare -A colores
 array_imagen=()
