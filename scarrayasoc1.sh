@@ -30,7 +30,7 @@ else
 	colortext=${colores[$texto]}
 
 	texto_ej=$(ifconfig)
-	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><img src='/home/usuario/imagen.png /><body>"
+	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><body>"
 
 	echo $crear_html > index.html
 	sudo docker-compose up -d --force-recreate
