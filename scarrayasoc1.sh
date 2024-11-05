@@ -2,7 +2,6 @@
 clear
 
 declare -A colores
-array_imagen=()
 
 if [ $# -eq 0 ]; then
 	echo "Debes añadir obligatoriamente un color por parametro por lo menos"
@@ -29,8 +28,15 @@ else
 	read -p "De que color quieres el texto? " texto
 	colortext=${colores[$texto]}
 
+
+	for ima in $(cat /home/usuario/imagenes.txt); do
+		echo $ima
+	done
+	read -p "¿Qué imagen eliges?" imagen
+
+
 	texto_ej=$(ifconfig)
-	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><body>"
+	crear_html="<style>body{background: #$colorback;}div{background: #$colordiv;}p{color: #$colortext;}</style><body><div><p>$texto_ej<p></div><img src="imagenes/$imagen.png"><body>"
 
 	echo $crear_html > index.html
 	sudo docker-compose up -d --force-recreate
